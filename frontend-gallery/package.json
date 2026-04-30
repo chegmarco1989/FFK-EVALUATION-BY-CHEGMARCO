@@ -1,0 +1,33 @@
+{
+  "name": "frontend-gallery",
+  "version": "1.0.0",
+  "description": "World-class image gallery application with authentication, infinite scroll, and persistent likes. Built with Next.js 14, TypeScript, and Tailwind CSS.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "latest",
+    "framer-motion": "latest",
+    "idb-keyval": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwind-merge": "latest",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "^10.4.19",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "postcss": "^8.4.38",
+    "typescript": "latest"
+  }
+}
