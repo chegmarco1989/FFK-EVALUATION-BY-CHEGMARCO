@@ -8,7 +8,7 @@
 
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, SubmitEvent } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { SOCIAL_PROVIDERS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
@@ -23,7 +23,7 @@ export default function LoginPage() {
   /**
    * Handle form submission
    */
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormError(null);
 
@@ -47,10 +47,24 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-100 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url(/background.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
+
       {/* Decorative elements */}
-      <div className="absolute top-10 left-10 w-32 h-32 bg-primary-200 rounded-full opacity-20 blur-3xl" />
-      <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary-300 rounded-full opacity-20 blur-3xl" />
+      <div className="absolute top-10 left-10 w-32 h-32 bg-primary-200 rounded-full opacity-20 blur-3xl z-0" />
+      <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary-300 rounded-full opacity-20 blur-3xl z-0" />
 
       {/* Login card */}
       <div className="w-full max-w-md relative z-10 animate-fade-in-up">
