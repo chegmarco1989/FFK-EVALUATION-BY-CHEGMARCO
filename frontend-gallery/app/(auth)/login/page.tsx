@@ -60,7 +60,7 @@ export default function LoginPage() {
       />
 
       {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-black/40 z-0" />
+      <div className="absolute inset-0 bg-black/60 z-0" />
 
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-primary-200 rounded-full opacity-20 blur-3xl z-0" />
@@ -70,10 +70,10 @@ export default function LoginPage() {
       <div className="w-full max-w-md relative z-10 animate-fade-in-up">
         {/* Logo */}
         <div className="text-center mb-8">
-          <h1 className="font-playfair text-4xl font-bold text-neutral-900">
+          <h1 className="font-playfair text-4xl font-bold text-white drop-shadow-lg">
             Gallery
           </h1>
-          <p className="text-neutral-600 mt-2">Welcome back</p>
+          <p className="text-white/90 mt-2 drop-shadow-md">Welcome back</p>
         </div>
 
         {/* Card */}
@@ -222,11 +222,11 @@ export default function LoginPage() {
         </div>
 
         {/* Test credentials hint */}
-        <div className="mt-6 p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-neutral-200">
-          <p className="text-xs text-neutral-600 text-center mb-2 font-medium">
+        <div className="mt-6 p-4 bg-white/90 backdrop-blur-sm rounded-lg border border-white/50 shadow-lg">
+          <p className="text-xs text-neutral-800 text-center mb-2 font-semibold">
             Test Credentials:
           </p>
-          <div className="text-xs text-neutral-500 space-y-1">
+          <div className="text-xs text-neutral-700 space-y-1 font-medium">
             <p>✅ muser1 / mpassword1</p>
             <p>✅ muser2 / mpassword2</p>
             <p>❌ muser3 / mpassword3 (blocked)</p>

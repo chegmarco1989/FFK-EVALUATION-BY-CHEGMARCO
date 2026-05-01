@@ -28,6 +28,7 @@ export default function GalleryPage() {
   const [category, setCategory] = useState<GalleryCategory>('All');
   const [sortBy, setSortBy] = useState<SortOption>('Popular');
   const [hasMore, setHasMore] = useState(true);
+  const [showFilters, setShowFilters] = useState(true);
 
   /**
    * Redirect to login if not authenticated
@@ -179,28 +180,44 @@ export default function GalleryPage() {
               ))}
             </select>
 
-            <button className="btn-secondary text-sm py-2">
-              Filters
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="btn-secondary text-sm py-2 flex items-center gap-2"
+            >
+              <span>Filters</span>
+              <svg
+                className={cn(
+                  "w-4 h-4 transition-transform",
+                  showFilters ? "rotate-180" : ""
+                )}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
           </div>
 
           {/* Categories */}
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
-            {GALLERY_CATEGORIES.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setCategory(cat)}
-                className={cn(
-                  'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all',
-                  category === cat
-                    ? 'bg-primary-500 text-white shadow-md'
-                    : 'bg-white dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-600 hover:border-primary-500'
-                )}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          {showFilters && (
+            <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2 animate-fade-in">
+              {GALLERY_CATEGORIES.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setCategory(cat)}
+                  className={cn(
+                    'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all',
+                    category === cat
+                      ? 'bg-primary-500 text-white shadow-md'
+                      : 'bg-white dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-600 hover:border-primary-500'
+                  )}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
