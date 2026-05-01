@@ -32,7 +32,7 @@
   
   /* Dark mode background */
   html.dark body {
-    @apply bg-neutral-900 text-neutral-100;
+    @apply bg-dark-950 text-white;
   }
   
   /* Focus visible styles */
@@ -78,7 +78,7 @@
   
   /* Card styles */
   .card {
-    @apply bg-white dark:bg-neutral-800 rounded-2xl shadow-soft overflow-hidden transition-all duration-300;
+    @apply bg-white dark:bg-dark-900 rounded-2xl shadow-soft overflow-hidden transition-all duration-300;
   }
   
   .card-hover {
@@ -87,7 +87,7 @@
   
   /* Dark mode card borders */
   html.dark .card {
-    @apply border border-neutral-700;
+    @apply border border-dark-800;
   }
   
   /* Container styles */
@@ -97,7 +97,7 @@
   
   /* Glassmorphism effect */
   .glass {
-    @apply bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md border border-white/20 dark:border-neutral-700/20;
+    @apply bg-white/80 dark:bg-dark-950/80 backdrop-blur-md border border-white/20 dark:border-dark-800/20;
   }
   
   /* Skeleton loader */

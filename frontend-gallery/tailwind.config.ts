@@ -32,8 +32,8 @@ const config: Config = {
           800: '#8C5E11',
           900: '#66460C',
         },
-        
-        /* Neutral colors - Beige/Cream palette */
+
+        /* Neutral colors - Beige/Cream palette for light mode */
         neutral: {
           50: '#FAFAF9',
           100: '#F5F0E8', // Main background
@@ -46,7 +46,22 @@ const config: Config = {
           800: '#64543F',
           900: '#493924',
         },
-        
+
+        /* Dark mode colors - True black/gray palette */
+        dark: {
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
+          950: '#030712', // Almost pure black
+        },
+
         /* Semantic colors - using standard Tailwind names */
         success: {
           50: '#F0FDF4',
@@ -61,13 +76,13 @@ const config: Config = {
           900: '#14532D',
         },
       },
-      
+
       /* Custom font families */
       fontFamily: {
         playfair: ['var(--font-playfair)', 'serif'],
         sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
-      
+
       /* Custom spacing */
       spacing: {
         '18': '4.5rem',
@@ -76,41 +91,41 @@ const config: Config = {
         '112': '28rem',
         '128': '32rem',
       },
-      
+
       /* Custom animations */
       animation: {
         /* Fade in animation */
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'fade-in-up': 'fadeInUp 0.6s ease-out',
         'fade-in-down': 'fadeInDown 0.6s ease-out',
-        
+
         /* Slide animations */
         'slide-in-right': 'slideInRight 0.5s ease-out',
         'slide-in-left': 'slideInLeft 0.5s ease-out',
-        
+
         /* Scale animations */
         'scale-in': 'scaleIn 0.3s ease-out',
         'scale-out': 'scaleOut 0.3s ease-in',
-        
+
         /* Shake animation for errors */
         'shake': 'shake 0.5s ease-in-out',
-        
+
         /* Shimmer effect for skeleton loaders */
         'shimmer': 'shimmer 2s infinite',
-        
+
         /* Pulse animation */
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        
+
         /* Bounce animation */
         'bounce-slow': 'bounce 2s infinite',
-        
+
         /* Spin animation */
         'spin-slow': 'spin 3s linear infinite',
-        
+
         /* Heart pop animation for likes */
         'heart-pop': 'heartPop 0.5s ease-out',
       },
-      
+
       /* Keyframes for custom animations */
       keyframes: {
         fadeIn: {
@@ -156,7 +171,7 @@ const config: Config = {
           '100%': { transform: 'scale(1)' },
         },
       },
-      
+
       /* Custom box shadows */
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
@@ -165,18 +180,18 @@ const config: Config = {
         'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
         'glow': '0 0 20px rgba(245, 166, 35, 0.3)',
       },
-      
+
       /* Custom border radius */
       borderRadius: {
         '4xl': '2rem',
         '5xl': '2.5rem',
       },
-      
+
       /* Custom backdrop blur */
       backdropBlur: {
         xs: '2px',
       },
-      
+
       /* Custom transitions */
       transitionDuration: {
         '400': '400ms',
