@@ -1,6 +1,6 @@
 # 🎨 Gallery - Image Gallery Application
 
-World-class image gallery application with authentication, infinite scroll, and persistent likes. Built with Next.js 14, TypeScript, and Tailwind CSS.
+World-class image gallery application with authentication, infinite scroll, and persistent likes. Built with Next.js 16, TypeScript, and Tailwind CSS.
 
 ## 📋 Table of Contents
 
@@ -17,7 +17,7 @@ World-class image gallery application with authentication, infinite scroll, and 
 
 ## 🛠 Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript 5.4+ (strict mode)
 - **Styling**: Tailwind CSS 3.4
 - **State Management**: React Context API
