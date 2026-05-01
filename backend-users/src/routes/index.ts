@@ -4,7 +4,7 @@
  * =============================================================================
  * Aggregates all route modules and mounts them on the Express app.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's RouteServiceProvider
  * - Centralizes all route definitions
  * - Applies common middleware to route groups

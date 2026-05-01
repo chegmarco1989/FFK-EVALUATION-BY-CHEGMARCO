@@ -187,12 +187,12 @@ export const ERROR_MESSAGES = {
   ACCOUNT_BLOCKED: 'Ce compte a été bloqué.',
   NETWORK_ERROR: 'Erreur de connexion. Veuillez réessayer.',
   SESSION_EXPIRED: 'Votre session a expiré. Veuillez vous reconnecter.',
-  
+
   // Gallery errors
   FAILED_TO_LOAD_IMAGES: 'Impossible de charger les images. Veuillez réessayer.',
   FAILED_TO_LIKE: 'Impossible d\'aimer cette photo. Veuillez réessayer.',
   NO_MORE_IMAGES: 'Plus d\'images à charger.',
-  
+
   // Generic errors
   SOMETHING_WENT_WRONG: 'Une erreur est survenue. Veuillez réessayer.',
   REQUIRED_FIELD: 'Ce champ est requis.',
@@ -235,9 +235,9 @@ export const ROUTES = {
  * (UI only - not functional in this version)
  */
 export const SOCIAL_PROVIDERS = [
-  { name: 'Google', icon: '🔍' },
-  { name: 'Apple ID', icon: '' },
-  { name: 'Facebook', icon: '📘' },
+  { name: 'Google', icon: '/google.png' },
+  { name: 'Apple ID', icon: '/apple.png' },
+  { name: 'Facebook', icon: '/facebook.png' },
 ] as const;
 
 // =============================================================================

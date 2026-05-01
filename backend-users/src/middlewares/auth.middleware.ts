@@ -5,7 +5,7 @@
  * This middleware validates JWT tokens and attaches user data to requests.
  * It's the gatekeeper that protects routes requiring authentication.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's auth middleware
  * - Extracts and validates JWT from Authorization header
  * - Attaches decoded user data to request object

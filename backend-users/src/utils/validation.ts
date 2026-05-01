@@ -5,7 +5,7 @@
  * This file contains all Zod validation schemas for request validation.
  * Zod provides runtime type checking and generates TypeScript types.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Zod is similar to Laravel's validation rules
  * - But it's type-safe and generates TypeScript types automatically
  * - Schemas can be composed and reused

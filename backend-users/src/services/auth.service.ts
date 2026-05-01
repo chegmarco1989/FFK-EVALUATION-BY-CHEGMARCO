@@ -4,7 +4,7 @@
  * =============================================================================
  * Handles authentication logic including login and JWT token generation.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's Auth facade
  * - Handles credential verification
  * - Generates JWT tokens (like Laravel Sanctum/Passport)

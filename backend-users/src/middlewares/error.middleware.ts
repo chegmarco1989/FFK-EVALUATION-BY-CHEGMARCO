@@ -6,7 +6,7 @@
  * This middleware catches all errors thrown in routes and controllers,
  * formats them consistently, and sends appropriate responses.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's exception handler
  * - Catches all unhandled errors
  * - Formats error responses consistently

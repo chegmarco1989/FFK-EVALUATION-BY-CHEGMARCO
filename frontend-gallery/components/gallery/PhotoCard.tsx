@@ -19,17 +19,17 @@ export interface PhotoCardProps {
 export default function PhotoCard({ photo, onLike }: PhotoCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showHeartParticles, setShowHeartParticles] = useState(false);
-  
+
   const handleLike = () => {
     onLike(photo.id);
-    
+
     // Trigger heart particles animation
     if (!photo.isLikedByCurrentUser) {
       setShowHeartParticles(true);
       setTimeout(() => setShowHeartParticles(false), 1000);
     }
   };
-  
+
   return (
     <div className="masonry-item group relative">
       <div className="card-hover relative overflow-hidden">
@@ -37,7 +37,7 @@ export default function PhotoCard({ photo, onLike }: PhotoCardProps) {
         {!imageLoaded && (
           <div className="skeleton w-full h-64" />
         )}
-        
+
         {/* Image */}
         <img
           src={photo.urls.regular}
@@ -49,7 +49,7 @@ export default function PhotoCard({ photo, onLike }: PhotoCardProps) {
           loading="lazy"
           onLoad={() => setImageLoaded(true)}
         />
-        
+
         {/* Heart particles */}
         {showHeartParticles && (
           <div className="absolute inset-0 pointer-events-none">
@@ -67,7 +67,7 @@ export default function PhotoCard({ photo, onLike }: PhotoCardProps) {
             ))}
           </div>
         )}
-        
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -87,19 +87,21 @@ export default function PhotoCard({ photo, onLike }: PhotoCardProps) {
                   </div>
                 </div>
               </div>
-              
+
               {/* Like button */}
               <button
                 onClick={handleLike}
                 className={cn(
-                  'p-2 rounded-full transition-all transform hover:scale-110',
+                  'p-3 rounded-full transition-all transform hover:scale-110 shadow-lg',
                   photo.isLikedByCurrentUser
-                    ? 'bg-red-500 text-white animate-heart-pop'
-                    : 'bg-white/20 text-white hover:bg-white/30'
+                    ? 'bg-white text-red-500 animate-heart-pop'
+                    : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
                 )}
                 aria-label={photo.isLikedByCurrentUser ? 'Unlike' : 'Like'}
               >
-                {photo.isLikedByCurrentUser ? '❤️' : '🤍'}
+                <span className="text-xl">
+                  {photo.isLikedByCurrentUser ? '❤️' : '🤍'}
+                </span>
               </button>
             </div>
           </div>

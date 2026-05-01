@@ -5,7 +5,7 @@
  * Security-related middleware including rate limiting, CORS, and headers.
  * These protect the API from common attacks and abuse.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's throttle middleware and CORS config
  * - Helmet sets secure HTTP headers (like Laravel's secure headers)
  * - Rate limiting prevents brute force attacks
@@ -58,7 +58,7 @@ export const helmetMiddleware = helmet({
  * CORS middleware configuration
  * Controls which origins can access the API
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's CORS middleware
  * - Allows cross-origin requests from specified domains
  * - Prevents unauthorized domains from accessing your API

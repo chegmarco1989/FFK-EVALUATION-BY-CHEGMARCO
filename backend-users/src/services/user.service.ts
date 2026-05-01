@@ -6,7 +6,7 @@
  * It sits between controllers and the database, handling data transformation,
  * validation, and complex operations.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's Service classes or Repository pattern
  * - Controllers call services, services call database
  * - Keeps controllers thin and focused on HTTP concerns

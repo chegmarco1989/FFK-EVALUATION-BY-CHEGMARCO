@@ -19,25 +19,25 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
-  
+
   /**
    * Handle form submission
    */
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormError(null);
-    
+
     // Validation
     if (!username.trim()) {
       setFormError('Email or username is required');
       return;
     }
-    
+
     if (!password) {
       setFormError('Password is required');
       return;
     }
-    
+
     try {
       await login({ username: username.trim(), password });
     } catch (err) {
@@ -45,13 +45,13 @@ export default function LoginPage() {
       setFormError(error);
     }
   };
-  
+
   return (
     <div className="min-h-screen bg-neutral-100 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-primary-200 rounded-full opacity-20 blur-3xl" />
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary-300 rounded-full opacity-20 blur-3xl" />
-      
+
       {/* Login card */}
       <div className="w-full max-w-md relative z-10 animate-fade-in-up">
         {/* Logo */}
@@ -61,7 +61,7 @@ export default function LoginPage() {
           </h1>
           <p className="text-neutral-600 mt-2">Welcome back</p>
         </div>
-        
+
         {/* Card */}
         <div className="card p-8 shadow-hard">
           {/* Title */}
@@ -71,7 +71,7 @@ export default function LoginPage() {
           <p className="text-neutral-600 text-sm mb-8">
             Hey, Enter your details to get sign in to your account
           </p>
-          
+
           {/* Error message */}
           {(formError || error) && (
             <div className="mb-6 p-4 bg-error-light border border-error-DEFAULT rounded-lg animate-shake">
@@ -80,7 +80,7 @@ export default function LoginPage() {
               </p>
             </div>
           )}
-          
+
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email/Username input */}
@@ -108,7 +108,7 @@ export default function LoginPage() {
                 </div>
               </div>
             </div>
-            
+
             {/* Password input */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-neutral-700 mb-2">
@@ -136,7 +136,7 @@ export default function LoginPage() {
                 </button>
               </div>
             </div>
-            
+
             {/* Forgot password link */}
             <div className="text-right">
               <button
@@ -146,7 +146,7 @@ export default function LoginPage() {
                 Having trouble in sign in?
               </button>
             </div>
-            
+
             {/* Submit button */}
             <button
               type="submit"
@@ -166,7 +166,7 @@ export default function LoginPage() {
               )}
             </button>
           </form>
-          
+
           {/* Divider */}
           <div className="relative my-8">
             <div className="absolute inset-0 flex items-center">
@@ -178,22 +178,26 @@ export default function LoginPage() {
               </span>
             </div>
           </div>
-          
+
           {/* Social login buttons */}
           <div className="grid grid-cols-3 gap-3">
             {SOCIAL_PROVIDERS.map((provider) => (
               <button
                 key={provider.name}
                 type="button"
-                className="btn-secondary py-3 text-sm"
+                className="btn-secondary py-3 text-sm flex flex-col items-center justify-center gap-2"
                 disabled
               >
-                <span className="mr-2">{provider.icon}</span>
-                {provider.name}
+                <img
+                  src={provider.icon}
+                  alt={provider.name}
+                  className="w-6 h-6 object-contain"
+                />
+                <span className="text-xs">{provider.name}</span>
               </button>
             ))}
           </div>
-          
+
           {/* Sign up link */}
           <p className="text-center text-sm text-neutral-600 mt-8">
             Not Registered Yet?{' '}
@@ -202,7 +206,7 @@ export default function LoginPage() {
             </button>
           </p>
         </div>
-        
+
         {/* Test credentials hint */}
         <div className="mt-6 p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-neutral-200">
           <p className="text-xs text-neutral-600 text-center mb-2 font-medium">

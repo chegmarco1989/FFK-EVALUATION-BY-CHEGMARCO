@@ -6,7 +6,7 @@
  * Using a singleton prevents creating multiple database connections,
  * which would exhaust connection pools and cause performance issues.
  * 
- * For PHP/Laravel developers:
+ * 
  * - PrismaClient is like Laravel's DB facade or Eloquent
  * - It provides type-safe database queries
  * - The singleton pattern ensures only one connection pool exists

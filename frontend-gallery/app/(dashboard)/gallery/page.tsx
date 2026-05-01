@@ -130,12 +130,12 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
       {/* Navigation bar */}
-      <nav className="glass sticky top-0 z-50 border-b border-neutral-200">
+      <nav className="glass sticky top-0 z-50 border-b border-neutral-200 dark:border-neutral-700">
         <div className="container-custom py-4">
           <div className="flex items-center justify-between">
-            <h1 className="font-playfair text-2xl font-bold text-neutral-900">
+            <h1 className="font-playfair text-2xl font-bold text-neutral-900 dark:text-neutral-100">
               Gallery
             </h1>
 
@@ -166,13 +166,13 @@ export default function GalleryPage() {
       </nav>
 
       {/* Filters */}
-      <div className="bg-white border-b border-neutral-200 sticky top-[73px] z-40">
+      <div className="bg-white dark:bg-neutral-800 border-b border-neutral-200 dark:border-neutral-700 sticky top-[73px] z-40">
         <div className="container-custom py-4">
           <div className="flex items-center justify-between mb-4">
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="input py-2 text-sm w-auto"
+              className="input py-2 text-sm w-auto dark:bg-neutral-700 dark:text-neutral-100 dark:border-neutral-600"
             >
               {SORT_OPTIONS.map(option => (
                 <option key={option} value={option}>{option}</option>
@@ -194,7 +194,7 @@ export default function GalleryPage() {
                   'px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all',
                   category === cat
                     ? 'bg-primary-500 text-white shadow-md'
-                    : 'bg-white text-neutral-700 border border-neutral-300 hover:border-primary-500'
+                    : 'bg-white dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-600 hover:border-primary-500'
                 )}
               >
                 {cat}
@@ -235,7 +235,7 @@ export default function GalleryPage() {
 
         {/* No more photos */}
         {!hasMore && photos.length > 0 && (
-          <div className="text-center py-8 text-neutral-600">
+          <div className="text-center py-8 text-neutral-600 dark:text-neutral-400">
             No more images to load
           </div>
         )}

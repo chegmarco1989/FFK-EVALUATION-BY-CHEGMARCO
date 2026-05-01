@@ -5,7 +5,7 @@
  * Controllers handle HTTP requests and responses.
  * They validate input, call services, and format responses.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel controllers
  * - Thin layer between routes and business logic
  * - Handles HTTP concerns (request/response)

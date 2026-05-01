@@ -5,7 +5,7 @@
  * Standardized response formatters for consistent API responses.
  * Every endpoint should use these helpers to ensure uniform response structure.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's response()->json() helper
  * - Ensures all API responses follow the same format
  * - Makes frontend integration easier with predictable structure

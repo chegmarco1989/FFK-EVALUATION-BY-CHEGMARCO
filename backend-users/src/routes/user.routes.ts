@@ -4,7 +4,7 @@
  * =============================================================================
  * Defines all user-related API endpoints.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's routes/api.php
  * - Maps HTTP methods and paths to controllers
  * - Applies middleware (auth, validation, etc.)

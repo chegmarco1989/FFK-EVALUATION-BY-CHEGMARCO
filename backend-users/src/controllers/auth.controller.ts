@@ -4,7 +4,7 @@
  * =============================================================================
  * Handles authentication-related HTTP requests.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's AuthController
  * - Handles login, logout, token refresh
  * - Delegates business logic to auth service

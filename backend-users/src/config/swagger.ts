@@ -5,7 +5,7 @@
  * Configures Swagger UI for interactive API documentation.
  * Accessible at /api/docs when server is running.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's API documentation packages (L5-Swagger, Scramble)
  * - Provides interactive API testing interface
  * - Auto-generates documentation from JSDoc comments

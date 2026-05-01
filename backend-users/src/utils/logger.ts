@@ -6,7 +6,7 @@
  * In production, you'd integrate with services like Winston, Pino, or
  * cloud logging solutions (CloudWatch, Datadog, etc.)
  * 
- * For PHP/Laravel developers:
+ * 
  * - This is similar to Laravel's Log facade
  * - Provides structured logging with levels
  * - Can be extended to write to files, databases, or external services

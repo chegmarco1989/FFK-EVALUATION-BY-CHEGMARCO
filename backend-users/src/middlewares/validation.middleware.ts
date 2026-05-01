@@ -5,7 +5,7 @@
  * Middleware factory for validating request data using Zod schemas.
  * Validates body, query parameters, and route parameters.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's FormRequest validation
  * - Validates incoming data before it reaches controllers
  * - Returns 400 with detailed errors if validation fails

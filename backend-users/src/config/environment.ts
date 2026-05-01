@@ -6,7 +6,7 @@
  * It ensures all required configuration is present before the app starts,
  * preventing runtime errors due to missing config.
  * 
- * For PHP/Laravel developers:
+ * 
  * - This is similar to Laravel's config files and env() helper
  * - dotenv loads .env file (like Laravel's Dotenv)
  * - We validate and type-cast values for type safety

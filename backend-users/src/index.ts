@@ -5,7 +5,7 @@
  * This is the main file that starts the Express server.
  * It configures middleware, routes, error handling, and starts listening.
  * 
- * For PHP/Laravel developers:
+ * 
  * - Similar to Laravel's public/index.php and bootstrap/app.php
  * - Initializes the application
  * - Configures middleware stack

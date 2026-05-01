@@ -6,7 +6,7 @@
  * Likes survive page reloads and browser restarts.
  * Each user has their own separate likes.
  * 
- * For PHP/Laravel developers:
+ * 
  * - IndexedDB is like a client-side database (similar to SQLite)
  * - idb-keyval is a simple key-value wrapper (like Redis)
  * - Data persists across sessions
