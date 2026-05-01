@@ -180,18 +180,18 @@ export default function LoginPage() {
           </div>
 
           {/* Social login buttons */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-4">
             {SOCIAL_PROVIDERS.map((provider) => (
               <button
                 key={provider.name}
                 type="button"
-                className="btn-secondary py-3 text-sm flex flex-col items-center justify-center gap-2"
+                className="btn-secondary py-3 px-3 text-sm flex items-center justify-center gap-1.5 whitespace-nowrap"
                 disabled
               >
                 <img
                   src={provider.icon}
                   alt={provider.name}
-                  className="w-6 h-6 object-contain"
+                  className="w-4 h-4 object-contain flex-shrink-0"
                 />
                 <span className="text-xs">{provider.name}</span>
               </button>
