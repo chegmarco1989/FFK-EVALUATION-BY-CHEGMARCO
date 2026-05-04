@@ -7,13 +7,10 @@
 
 generator client {
   provider = "prisma-client-js"
-  // Generate optimized queries for better performance
-  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
 }
 
 // =============================================================================
@@ -23,66 +20,63 @@ datasource db {
 // and authentication credentials.
 model User {
   // Primary key - Auto-incrementing integer ID
-  id          Int      @id @default(autoincrement())
-  
+  id Int @id @default(autoincrement())
+
   // Personal Information
-  firstName   String   // User's first name
-  lastName    String   // User's last name
-  birthDate   DateTime // Date of birth (stored as ISO date)
-  
+  firstName String // User's first name
+  lastName  String // User's last name
+  birthDate DateTime // Date of birth (stored as ISO date)
+
   // Location Information
-  city        String   // City of residence
-  country     String   // ISO2 country code (e.g., FR, US, CI)
-  
+  city    String // City of residence
+  country String // ISO2 country code (e.g., FR, US, CI)
+
   // Visual Identity
-  avatar      String   // URL to user's avatar image
-  
+  avatar String // URL to user's avatar image
+
   // Professional Information
-  company     String   // Company name where user works
-  jobPosition String   // Job title or position
-  
+  company     String // Company name where user works
+  jobPosition String // Job title or position
+
   // Contact Information
-  mobile      String   // Formatted phone number
-  
+  mobile String // Formatted phone number
+
   // Authentication Credentials
   // UNIQUE constraint ensures no duplicate usernames in the system
-  username    String   @unique
-  
+  username String @unique
+
   // UNIQUE constraint ensures no duplicate emails in the system
-  email       String   @unique
-  
+  email String @unique
+
   // Password is stored as bcrypt hash (NEVER store plain text passwords!)
   // The hash includes salt automatically, making rainbow table attacks ineffective
-  password    String
-  
+  password String
+
   // Authorization
   // Role determines what actions the user can perform in the system
   // "admin" = full access to all resources
   // "user" = limited access, can only view own profile
-  role        String   @default("user") // Default role is "user"
-  
+  role String @default("user") // Default role is "user"
+
   // Audit Timestamps
   // Automatically set when record is created
-  createdAt   DateTime @default(now())
-  
+  createdAt DateTime @default(now())
+
   // Automatically updated whenever record is modified
-  updatedAt   DateTime @updatedAt
-  
+  updatedAt DateTime @updatedAt
+
   // =============================================================================
   // INDEXES FOR PERFORMANCE OPTIMIZATION
   // =============================================================================
   // These indexes dramatically speed up common queries:
-  
+
   // 1. Login queries search by email OR username
   @@index([email])
   @@index([username])
-  
   // 2. Composite index for role-based queries (e.g., "get all admins")
   @@index([role])
-  
   // 3. Index on createdAt for sorting users by registration date
   @@index([createdAt])
-  
   // Table name in database will be "users" (lowercase, plural)
   @@map("users")
 }

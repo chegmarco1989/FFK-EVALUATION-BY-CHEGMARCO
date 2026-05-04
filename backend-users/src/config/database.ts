@@ -1,18 +1,20 @@
 /**
  * =============================================================================
- * DATABASE CONNECTION - PRISMA CLIENT SINGLETON
+ * DATABASE CONNECTION - PRISMA CLIENT SINGLETON (Prisma 7+)
  * =============================================================================
  * This module provides a singleton instance of Prisma Client.
  * Using a singleton prevents creating multiple database connections,
  * which would exhaust connection pools and cause performance issues.
  * 
- * 
- * - PrismaClient is like Laravel's DB facade or Eloquent
- * - It provides type-safe database queries
- * - The singleton pattern ensures only one connection pool exists
+ * Prisma 7 Changes:
+ * - Database URL moved to prisma.config.ts
+ * - Uses adapter pattern for database connections
+ * - Better-sqlite3 adapter for SQLite
  */
 
 import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaBetterSQLite } from '@prisma/adapter-better-sqlite3';
+import Database from 'better-sqlite3';
 import config from './environment';
 
 /**
@@ -26,9 +28,21 @@ declare global {
 }
 
 /**
+ * Create SQLite adapter for Prisma 7+
+ * This replaces the direct DATABASE_URL connection
+ */
+const databaseUrl = process.env.DATABASE_URL || 'file:./dev.db';
+const dbPath = databaseUrl.replace('file:', '');
+const db = new Database(dbPath);
+const adapter = new PrismaBetterSQLite(db);
+
+/**
  * Prisma Client configuration options
  */
 const prismaOptions: Prisma.PrismaClientOptions = {
+  // Use adapter for database connection (Prisma 7+)
+  adapter,
+  
   // Log queries in development for debugging
   log: config.isDevelopment()
     ? ['query', 'info', 'warn', 'error']
